@@ -2,6 +2,7 @@
 	"author": "dev@viperize.it", 
 	"description": "RTTTL is a Viper module to parse and play old style ringtones.", 
 	"name": "Ring Tone Text Transfer Language (RTTTL)",
+	"fullname":"community.viper.rtttl",
 	"dependencies": {
 		"official.viper.stdlib":"r0.1.0"
 	}
