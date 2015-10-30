@@ -4,6 +4,6 @@
 	"name": "Ring Tone Text Transfer Language (RTTTL)",
 	"fullname":"community.viper.rtttl",
 	"dependencies": {
-		"official.viper.stdlib":"r0.1.0"
+		"core.viper.stdlib":"r0.3.0"
 	}
 }
