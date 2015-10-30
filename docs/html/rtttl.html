@@ -1,0 +1,212 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>RTTTL Module: &mdash; RTTTL module 0.3.0 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="RTTTL module 0.3.0 documentation" href="index.html"/>
+        <link rel="prev" title="RTTL" href="index.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+          <a href="index.html" class="fa fa-home"> RTTTL module</a>
+        
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="">RTTTL Module:</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">RTTTL module</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>RTTTL Module:</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="_sources/rtttl.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <div class="section" id="module-rtttl">
+<span id="rtttl-module"></span><h1>RTTTL Module:<a class="headerlink" href="#module-rtttl" title="Permalink to this headline">¶</a></h1>
+<p>This module contains class definitions for the &#8220;RTTTL&#8221; melody player to be used for driving buzzers or speakers connected to PWM pins.</p>
+<p>Ring Tone Text Transfer Language (RTTTL) was developed by Nokia to be used to transfer ringtones to cellphone by Nokia.</p>
+<p>The RTTTL format is a string divided into three sections: name, default value, and data.</p>
+<p>The name section consists of a string describing the name of the ringtone. It can be no longer than 10 characters, and cannot contain a colon &#8221;:&#8221; character. (However, since the Smart Messaging specification allows names up to 15 characters in length, some applications processing RTTTL also do so.)
+The default value section is a set of values separated by commas, where each value contains a key and a value separated by an = character, which describes certain defaults which should be adhered to during the execution of the ringtone. Possible names are</p>
+<ul class="simple">
+<li>d - duration</li>
+<li>o - octave</li>
+<li>b - beat, tempo</li>
+</ul>
+<p>The data section consists of a set of character strings separated by commas, where each string contains a duration, pitch, octave and optional dotting (which increases the duration of the note by one half).
+The format of RTTTL notation is similar to the Music Macro Language found in BASIC implementations present on many early microcomputers.
+Various RTTTL melodies can be downloaded from <a class="reference external" href="http://ez4mobile.com/nokiatone/rtttf.htm">http://ez4mobile.com/nokiatone/rtttf.htm</a> and many other websites.</p>
+<dl class="class">
+<dt id="rtttl.tune">
+<em class="property">class </em><code class="descname">tune</code><span class="sig-paren">(</span><em>txt</em><span class="sig-paren">)</span><a class="headerlink" href="#rtttl.tune" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is the class for creating the melody to be played by the RTTTL player.
+The melody is passed as string</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rtttl.play">
+<code class="descname">play</code><span class="sig-paren">(</span><em>pin</em>, <em>callback=None</em>, <em>restart=False</em><span class="sig-paren">)</span><a class="headerlink" href="#rtttl.play" title="Permalink to this definition">¶</a></dt>
+<dd><p>Start playing the melody actuating the PWM on the selected pin.</p>
+<p>It is also possible to pass a function as callback that will be called every time a note is played.
+The callback passes the played note to the called function.</p>
+<p>Moreover, loop play is also possible by setting the restart parameter to True.</p>
+<ul class="simple">
+<li>pin: Dx.PWM, it is the pin where the buzzer is connected.</li>
+<li>callback: the function to be called every time a note is played. Played note will be passed to the called function.</li>
+<li>restart: it activates the playloop.</li>
+</ul>
+</dd></dl>
+
+<dl class="method">
+<dt id="rtttl.setbpm">
+<code class="descname">setbpm</code><span class="sig-paren">(</span><em>bpm</em><span class="sig-paren">)</span><a class="headerlink" href="#rtttl.setbpm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Change the melody speed.</p>
+<p>bpm: RTTTL melodies include tempo definition in BPM, however through this function it is possible to manually change the melody speed.</p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="RTTL"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright Viper Team.
+    </p>
+  </div>
+
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.3.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
