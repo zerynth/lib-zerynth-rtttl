@@ -2,7 +2,7 @@
 
 	"version":"0.3.0",
 	"title":"RTTTL module",
-	"copyright":"Viper Team",
+	"copyright":"Zerynth Team",
 	"files":[
 		["RTTTL","rtttl.py"]
 	]

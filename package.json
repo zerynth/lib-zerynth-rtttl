@@ -1,9 +1,21 @@
 {
-	"author": "dev@viperize.it", 
-	"description": "RTTTL is a Viper module to parse and play old style ringtones.", 
-	"name": "Ring Tone Text Transfer Language (RTTTL)",
-	"fullname":"community.viper.rtttl",
-	"dependencies": {
-		"core.viper.stdlib":"r0.3.0"
-	}
+    "dependencies": {},
+    "description": "RTTTL support for playing melodies in rtttl format through PWM pins connected to a buzzer",
+    "fullname": "lib.zerynth.rtttl",
+    "git_pointer": "zerynth://zerynth-libs/zerynth-rtttl",
+    "info": {
+        "chip_manufacturer": "-",
+        "chip_name": "-",
+        "name": "Zerynth RTTTL Library",
+        "type": "Protocol"
+    },
+    "keywords": [
+        "sound",
+        "buzzer",
+        "rtttl"
+    ],
+    "repo": "official",
+    "title": "RTTTL libraries",
+    "version": "r2.0.11",
+    "whatsnew": " "
 }

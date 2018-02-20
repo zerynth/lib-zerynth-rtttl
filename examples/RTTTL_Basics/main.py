@@ -1,12 +1,12 @@
 ################################################################################
 # RTTTL Library Basics
 #
-# Created by VIPER Team 2015 CC
+# Created by Zerynth Team 2015 CC
 # Authors: D. Mazzei, G. Baldi,  
 ###############################################################################
 
 
-import rtttl
+from rtttl import rtttl
 import streams
 
 s=streams.serial()
@@ -26,7 +26,7 @@ while True:
         print("MAY THE FORCE BE WITH YOU!")
         print("-"*30)
         
-        # play the melody actuating the PWM of pin D8 (Try it with the TOI Shield)
+        # play the melody actuating the PWM of pin D8 (Try it with the Zerynth Shield)
         song.play(D8.PWM)
 
         
