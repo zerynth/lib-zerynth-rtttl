@@ -1,0 +1,15 @@
+---
+description: RTTTL support for playing melodies in rtttl format through PWM pins connected
+    to a buzzer
+fullname: lib.zerynth.rtttl
+info:
+    chip_manufacturer: '-'
+    chip_name: '-'
+    name: Zerynth RTTTL Library
+    type: Protocol
+keywords:
+- sound
+- buzzer
+- rtttl
+title: RTTTL libraries
+...
